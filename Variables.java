@@ -18,9 +18,6 @@ public class Variables
 		System.out.println("Instance variable j="+obj1.j);
 		System.out.println("Static variable k="+k);
 		
-	
-		
-		
 
 	}
 

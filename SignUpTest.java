@@ -19,9 +19,12 @@ public class SignUpTest {
 		String strSurname = objUtilities.generateRandomSurname();
 		objSignUpPage.setSurnameInFBSignUpPage(strSurname);
 		
-		String strMobileNumOrEmailAdd = objUtilities.generateMobileNumOrEmailAdd();
-		objSignUpPage.setMobileNumOrEmailAddInFbSignUpPage(strMobileNumOrEmailAdd);
+		String strMobileNum=objUtilities.generateMobileNum();
+		objSignUpPage.setMobileNumInFbSignUpPage(strMobileNum);
 		
+		String strEmailAdd=objUtilities.generateEmailAdd();
+		objSignUpPage.setEmailAddInFbSignUpPage(strEmailAdd);
+				
 		char charPassword[]= objUtilities.generatePassword();
 		objSignUpPage.setPasswordInFBSignUpPage(charPassword);
 		

@@ -10,9 +10,14 @@ public class SignUpPage {
 		System.out.println("Surname is : " + strSurname);
 	}
 
-	public void setMobileNumOrEmailAddInFbSignUpPage(String strMobileNumOrEmailAdd) {
+	public void setMobileNumInFbSignUpPage(String strMobileNum) {
 
-		System.out.println("Mobile Number or Email Address is : " + strMobileNumOrEmailAdd);
+		System.out.println("Mobile Number is : " + strMobileNum);
+	}
+
+	public void setEmailAddInFbSignUpPage(String strEmailAdd) {
+
+		System.out.println("Email Address is : " + strEmailAdd);
 	}
 
 	public void setPasswordInFBSignUpPage(char charPasssword[]) {
@@ -26,7 +31,7 @@ public class SignUpPage {
 	public void selectMonth(String strMonth) {
 		System.out.println("Month is : " + strMonth);
 	}
-	
+
 	public void selectYear(int intYear) {
 		System.out.println("Year is : " + intYear);
 	}

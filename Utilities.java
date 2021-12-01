@@ -8,25 +8,64 @@ public class Utilities {
 	
 	public String generateRandomFirstName()
 	{
+		
+		int length=4;
+		String strLetters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String randomString="";
+		for(int index=0;index<length;index++){
+		int rnum= (int)((Math.random()*strLetters.length()));//returns 0 to str.length()i.e.52
+		randomString +=strLetters.substring(rnum, rnum+1);
+		}
+		
 		String strFirstNames[]={"Mahesh","Sagar","Pooja","Nikhil","Jay"};
 		String strFirstName=strFirstNames[objRandom.nextInt(strFirstNames.length)];
-		return strFirstName;
+		return (strFirstName+randomString);
 	}
-	
+	 
 	
 	public String generateRandomSurname()
 	{
+		int length=4;
+		String strLetters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String randomString="";
+		for(int index=0;index<length;index++){
+		int rnum= (int)((Math.random()*strLetters.length()));//returns 0 to str.length()i.e.52
+		randomString +=strLetters.substring(rnum, rnum+1);
+		}
+		
 		String strSurNames[]={"Jawale","Khade","Patel","Jadhav","Patil"};
 		String strSurName=strSurNames[objRandom.nextInt(strSurNames.length)];
-		return strSurName;
+		return strSurName+randomString;
 		 
 	}
 	
-	public String generateMobileNumOrEmailAdd()
+	public String generateMobileNum()
 	{
-		String strEmailIdsOrMobNums[]={"xyz@gmail.com","8888877777","ghy@gamil.com","kkk@gmail.com","7777788888"};
-		String strEmailIdOrMobNum=strEmailIdsOrMobNums[objRandom.nextInt(strEmailIdsOrMobNums.length)];
-		return strEmailIdOrMobNum;
+		String strMobNumStartingDigits[]={"9","7","8","6"};
+		String strMobNumStartingDigit=strMobNumStartingDigits[objRandom.nextInt(strMobNumStartingDigits.length)];
+		int length=9;
+		String strMobNumDigits="0123456789";
+		String randomNumber="";
+		for(int index=0;index<length;index++){
+		int rnum= (int)((Math.random()*strMobNumDigits.length()));
+		randomNumber +=strMobNumDigits.substring(rnum, rnum+1);
+		}
+		return strMobNumStartingDigit+randomNumber;
+	}
+	
+	
+	public String generateEmailAdd()
+	{
+		String strEmailAddProviders[]={"@gmail.com","@yahoo.com","@rediffmail.com"};
+		String strEmailAddProvider=strEmailAddProviders[objRandom.nextInt(strEmailAddProviders.length)];
+		int length=6;
+		String strLettersandNums="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		String randomString="";
+		for(int index=0;index<length;index++){
+		int rnum= (int)((Math.random()*strLettersandNums.length()));
+		randomString +=strLettersandNums.substring(rnum, rnum+1);
+		}
+		return randomString+strEmailAddProvider;
 	}
 	
 	public char[] generatePassword()

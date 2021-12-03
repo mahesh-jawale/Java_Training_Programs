@@ -4,18 +4,25 @@ import com.fb.signup.pagefactory.SignUpPage;
 import com.generic.BaseTest;
 import com.generic.Utilities;
 
-public class SignUpTest {
-
+public class SignUpTest extends BaseTest
+{
+	
+	public void beforeMainMethod()
+	{
+		this.initializeWebEnvironment("https://www.facebook.com/reg/");
+	}
+	
 	public static void main(String[] args) {
-		BaseTest objBaseTest=new BaseTest();
+		
 		SignUpPage objSignUpPage = new SignUpPage();
 		Utilities objUtilities = new Utilities();
+		SignUpTest objSignUpTest=new SignUpTest();
 		
-		objBaseTest.initializeWebEnvironment("https://www.facebook.com/reg/");
+		objSignUpTest.beforeMainMethod();
 		
 		String strFirstName = objUtilities.generateRandomFirstName();
 		objSignUpPage.setFirstNameInFBSignUpPage(strFirstName);
-		
+
 		String strSurname = objUtilities.generateRandomSurname();
 		objSignUpPage.setSurnameInFBSignUpPage(strSurname);
 		
@@ -42,7 +49,12 @@ public class SignUpTest {
 		
 		objSignUpPage.clickOnSignUpButton();
 		
-		objBaseTest.tearDown();
+		objSignUpTest.afterMainMethod();
+		
 	}
 
+	public void afterMainMethod()
+	{
+		tearDown();
+	}
 }

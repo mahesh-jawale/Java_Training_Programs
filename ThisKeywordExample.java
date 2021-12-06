@@ -1,38 +1,52 @@
-package com.programs;
+package com.thiskeyword;
 
 public class ThisKeywordExample {
-	
-	int studentID;
-	String studentName;
-	
-	void getData(int studentID,String studentName)
-	{
-		this.studentID=studentID;
-		this.studentName=studentName;
-	}
-	
-	void thisMethod(int i)
-	{
-	System.out.println("this method"+i);	
-	}
-	
-	void display(int i)
-	{
-		System.out.println("Student ID "+studentID+" | Student Name "+studentName);
-		this.thisMethod(i);
-	}
 
-	public static void main(String[] args) 
+	String strFlavour;
+	
+	
+	
+	public void setFlavourAndGetPrice(String strFlavour)
 	{
-		  
-			ThisKeywordExample Obj1=new ThisKeywordExample();  
-			  Obj1.getData(1037,"Mahesh");
-			  Obj1.display(30);
-			  
-			  
-			  ThisKeywordExample Obj2=new ThisKeywordExample();  
-			  Obj2.getData(1039,"rajesh");
-			  Obj2.display(60);
+		this.strFlavour=strFlavour;
+		
+		switch(strFlavour)
+		{
+		case "Vanila":
+			System.out.println(strFlavour+" flavour price is 25rs.");
+			break;
+			
+		case "Strawberry":
+			System.out.println(strFlavour+" flavour price is 30rs.");
+			break;
+			
+		case "Chocolate":
+			System.out.println(strFlavour+" flavour price is 20rs.");
+			break;
+			
+		case "Blackberry":
+			System.out.println(strFlavour+" flavour price is 15rs.");
+			break;
+			
+		case "Blueberry":
+			System.out.println(strFlavour+" flavour price is 40rs.");
+			break;
+			
+		default:
+			System.out.println("Invalid Choice");
+			break;
+		
 	}
+	
+	
+
+		
+		
+	}
+	
+	
+	
+	
+	
 
 }

@@ -1,25 +1,36 @@
-package com.programs;
+package com.polymorphism.methodoverloading;
 
-//Method Overloading
-
-public class MethodOverloadingExample {
+public class MethodOverloadingExample 
+{
 	
-	
-	public int addition(int x,int y)
+	public void searchProduct(String strProduct)
 	{
-		return (x+y);
+		System.out.println("Product : "+strProduct);
+		
 	}
 	
-	public int addition(int x,int y,int z)
-	{
-		return (x+y+z);	
+	public void searchProduct(String strProduct,String strGender) {
+	
+		System.out.println("Product : "+strProduct+" Gender : "+strGender);
+
 	}
 	
-	public static void main(String[] args) {
-
-	System.out.println("Addition of two numbers "+new MethodOverloadingExample().addition(20,40));
-	System.out.println("Addition of three numbers "+new MethodOverloadingExample().addition(20,40,40));
+	public void searchProduct(String strProduct,String strGender,String strBrand) {
+		
+		System.out.println("Product : "+strProduct+" Gender : "+strGender+" Brand : "+strBrand);
+	}
+	
+	public void searchProduct(String strProduct,String strGender,String strBrand,String strColor) {
+		
+		System.out.println("Product : "+strProduct+" Gender : "+strGender+" Brand : "+strBrand+" Colour : "+strColor);
+	}
+	
+	public void searchProduct(String strProduct,String strGender,String strBrand,String strColor,String strDiscountRange) {
+		
+		System.out.println("Product : "+strProduct+"| Gender : "+strGender+" | Brand : "+strBrand+" | Colour : "+strColor+" | Discount Range : "+strDiscountRange);
 
 	}
+	
+	
 
 }

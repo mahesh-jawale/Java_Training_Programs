@@ -1,6 +1,6 @@
-package com.inheritance;
+package com.polymorphism.methodoverriding;
 
-public class CardDetails extends PlanDetails{
+public class CardDetails extends JioRecharge{
 	
 	public void enterCardDetails()
 	{

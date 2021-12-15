@@ -1,4 +1,4 @@
-package com.privateaccessmodifier;
+package com.package2;
 
 import java.util.Random;
 

@@ -1,43 +1,48 @@
-package com.polymorphism.methodoverloading;
+package com.privateaccessmodifier;
 
 import java.util.Random;
 
 public class Utilities {
 	
-	Random objRandom =new Random();
-	public String generateProduct()
+	Random objRandom=new Random();
+	
+	public String generateEmailAdd()
 	{
-		String strProducts[]={"Tshirts","Trousers","Jackets","Jeans","Shirts"};
-		String strProduct=strProducts[objRandom.nextInt(strProducts.length)];
-		return (strProduct);
+		String strEmailAddProviders[]={"@gmail.com","@yahoo.com","@rediffmail.com"};
+		String strEmailAddProvider=strEmailAddProviders[objRandom.nextInt(strEmailAddProviders.length)];
+		int length=6;
+		String strLettersandNums="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		String randomString="";
+		for(int index=0;index<length;index++){
+		int rnum= (int)((Math.random()*strLettersandNums.length()));
+		randomString +=strLettersandNums.substring(rnum, rnum+1);
+		}
+		return randomString+strEmailAddProvider;
 	}
 	
-	public String generateGender()
-	{
-		String strGenders[]={"Male","Female"};
-		String strGender=strGenders[objRandom.nextInt(strGenders.length)];
-		return (strGender);
-	}
 	
-	public String generateBrand()
+	public String generatePassword()
 	{
-		String strBrands[]={"Roadsters","Puma","Adidas","Nike"};
-		String strBrand=strBrands[objRandom.nextInt(strBrands.length)];
-		return (strBrand);
-	}
-	
-	public String generateColour()
-	{
-		String strColours[]={"Pink","Grey","Blue","Black","Red","Green","Orange"};
-		String strColour=strColours[objRandom.nextInt(strColours.length)];
-		return (strColour);
-	}
-	
-	public String generateDiscountRange()
-	{
-		String strDiscounts[]={"10% and above","20% and above","30% and above","40% and above","50% and above"};
-		String strDiscount=strDiscounts[objRandom.nextInt(strDiscounts.length)];
-		return (strDiscount);
+		String strCapitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String strLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+		String strSpecialCharacters = "!@#$";
+		String strNumbers = "1234567890";
+
+		String strCombinedChars = strCapitalCaseLetters + strLowerCaseLetters + strSpecialCharacters + strNumbers;
+
+		char[] charPassword = new char[6];
+
+		charPassword[0] = strLowerCaseLetters.charAt(objRandom.nextInt(strLowerCaseLetters.length()));
+		charPassword[1] = strCapitalCaseLetters.charAt(objRandom.nextInt(strCapitalCaseLetters.length()));
+		charPassword[2] = strSpecialCharacters.charAt(objRandom.nextInt(strSpecialCharacters.length()));
+		charPassword[3] = strNumbers.charAt(objRandom.nextInt(strNumbers.length()));
+
+		for (int i = 4; i < 6; i++) {
+			charPassword[i] = strCombinedChars.charAt(objRandom.nextInt(strCombinedChars.length()));
+		}
+
+		return String.valueOf(charPassword);
+		
 	}
 
 }

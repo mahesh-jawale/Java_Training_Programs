@@ -1,16 +1,19 @@
-package com.polymorphism.methodoverriding;
+package com.encapsulation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
-	
-	public void initializeWebEnvironment(String strURL)
-	{
-		System.out.println("Opening URL : "+strURL);
+	WebDriver driver=null;
+	public void initializeWebEnvironment(String strURL) {
+		System.setProperty("webdriver.chrome.driver","E:\\ChromeDriver\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get(strURL);
+
 	}
-	
-	public void rechargeSuccessful()
+	public WebDriver getDriver()
 	{
-		System.out.println("\nPayment Successful");
-		System.out.println("Your Mobile Number Is Recharged");
+		return driver;
 	}
 
 }

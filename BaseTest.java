@@ -1,11 +1,11 @@
-package com.encapsulation;
+package com.finalkeyword;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BaseTest {
+public final class BaseTest {
 	WebDriver driver=null;
-	public void initializeWebEnvironment(String strURL) {
+	public final void initializeWebEnvironment(String strURL) {
 		System.setProperty("webdriver.chrome.driver","E:\\ChromeDriver\\chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get(strURL);
@@ -15,5 +15,4 @@ public class BaseTest {
 	{
 		return driver;
 	}
-
 }

@@ -1,0 +1,56 @@
+public void verifyColourOfCell(String excelFileName, String strSheetName, String expectedColourCode) {
+
+		// Excel file load
+		int lastRowNum = 0;
+		XSSFRow row;
+		String excelFilePath = System.getProperty("user.dir") + "/src/test/resources/testData/excel/" + excelFileName
+				+ ".xlsx";
+
+		try {
+			FileInputStream excelFile = new FileInputStream(excelFilePath);
+			workbook = new XSSFWorkbook(excelFile);
+			sheet = workbook.getSheet(strSheetName);
+
+			lastRowNum = sheet.getLastRowNum();
+			System.out.println(lastRowNum);
+
+		} catch (Exception e) {
+
+			System.out.println("While loading excel getting error >>" + e.getMessage());
+			e.printStackTrace();
+		}
+
+		//Traversing the excel file and getting colour code
+		for (int intRow = 0; intRow <= lastRowNum; intRow++) {
+			try {
+				row = (XSSFRow) sheet.getRow(intRow);
+				for (int intCol = 0; intCol < row.getLastCellNum(); intCol++) {
+					// System.out.println(row.getLastCellNum());
+					
+					try {
+						if (!sheet.getRow(intRow).getCell(intCol).equals(""))
+							cell = sheet.getRow(intRow).getCell(intCol);
+						
+						// String strCellData=cell.getStringCellValue();
+						// System.out.println("cell data : "+strCellData);
+						
+						XSSFCellStyle cs = cell.getCellStyle();
+						String actualColourCode = cs.getFillForegroundColorColor().getARGBHex();
+						//System.out.println("Cell Colour Code : " + actualColourCode);
+
+						if (actualColourCode.equals(expectedColourCode)) {
+							System.out.println(actualColourCode + " at row " + intRow + " and column " + intCol);
+						}
+						
+
+					} catch (Exception e) {
+					
+
+					}
+				}
+			} catch (Exception e) {
+
+			}
+
+		}
+	}
